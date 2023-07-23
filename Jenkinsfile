@@ -1,5 +1,5 @@
 node {
-	stage('Build') {
+/* 	stage('Build') {
 		echo "Build"
 	}
 	stage('Test') {
@@ -7,5 +7,12 @@ node {
 	}
    stage('Integration Testing') {
 		echo "Integration Test"
-	}
+	} */
+
+		echo "Build"
+
+		echo "Test"
+
+   	echo "Integration Test"
+
 }
