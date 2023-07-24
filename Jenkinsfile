@@ -2,12 +2,12 @@
 
     // declarative
     pipeline {
-    //agent any
-    agent { docker { image  'node:20.5' } }
+    agent any
+    //agent { docker { image  'node:20.5' } }
     stages{
         stage('Build'){
             steps{
-                sh 'node --version'
+              //  sh 'node --version'
                 echo "Build"
             }
         }
