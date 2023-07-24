@@ -22,4 +22,15 @@
         }
      }
     }
+    post {
+     always(){
+      echo 'i am awsome, i always run'
+     }
+      success(){
+      echo 'in success'
+     }
+      failure(){
+      echo 'in failure'
+     }
+    }
 }
