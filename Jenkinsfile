@@ -12,7 +12,7 @@
         }
      } */
 
-       stage('build'){
+       stage('Build'){
         withMaven(maven: 'mvn') {
             sh "mvn clean package"
         }
