@@ -20,13 +20,13 @@
      }
     }
     post {
-     always(){
+     always {
       echo 'i am awsome, i always run'
      }
-      success(){
+      success {
       echo 'in success'
      }
-      failure(){
+      failure {
       echo 'in failure'
      }
     }
