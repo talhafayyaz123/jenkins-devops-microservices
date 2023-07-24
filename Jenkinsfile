@@ -1,33 +1,36 @@
-pipeline {
-     agent any
+    // scripted
 
-    stages {
-
-         stage('build Dockerfile') {
-
-            steps {
-                sh '''echo "FROM maven:3-alpine
-                          RUN apk add --update docker openrc
-                          RUN rc-update add docker boot" >/var/lib/jenkins/workspace/Dockerfile'''
-
+    // declarative
+    pipeline {
+    //agent any
+    agent { docker { image  'node:20.5' } }
+    stages{
+        stage('Build'){
+            steps{
+                sh 'node --version'
+                echo "Build"
             }
-         }
-
-         stage('run Dockerfile') {
-             agent{
-                 dockerfile {
-                            filename '/var/lib/jenkins/workspace/Dockerfile'
-                            args '--user root -v $HOME/.m2:/root/.m2  -v /var/run/docker.sock:/var/run/docker.sock'
-                        }
-             }
-
-             steps {
-                 sh 'docker version'
-                 sh 'mvn -version'
-                 sh 'java -version'
-             }
-
-         }
-
+        }
+        stage('Test'){
+            steps{
+                echo "Test"
+            }
+        }
+        stage('Integration Test'){
+            steps{
+                echo "Integration Test"
+            }
+        }
+    }
+    post {
+        always {
+        echo 'i am awsome, i always run'
+        }
+        success {
+        echo 'in success'
+        }
+        failure {
+        echo 'in failure'
+        }
     }
 }
