@@ -5,18 +5,12 @@
     //agent any
      agent { docker { image  'maven:3.6.3' } }
     stages{
-    /* stage('Build'){
+    stage('Build'){
         steps{
             sh 'mvn --version'
             echo "Build"
         }
-     } */
-
-       stage('Build'){
-        withMaven(maven: 'mvn') {
-            sh "mvn clean package"
-        }
-    }
+     }
     stage('Test'){
         steps{
             echo "Test"
