@@ -23,7 +23,7 @@
                 echo "BUILD_URL - $env.BUILD_URL"
             }
         }
-            stage('Complie'){
+        /* stage('Complie'){
                 steps{
                     sh 'mvn clean compile'
                 }
@@ -44,7 +44,7 @@
             steps{
                 sh "mvn package -DskipTests"
             }
-        }
+        } */
        stage('Build Docker Image'){
             steps{
               script{
