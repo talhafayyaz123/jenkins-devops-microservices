@@ -45,7 +45,7 @@
                 sh "mvn package -DskipTests"
             }
         } */
-      /*  stage('Build Docker Image'){
+       stage('Build Docker Image'){
             steps{
               script{
                 dockerImage=docker.build("docker build -t in28min/mmv3-currency-exchange-service:${env.BUILD_TAG}");
@@ -62,7 +62,7 @@
 
                 }
             }
-        } */
+        }
     }
     post {
         always {
