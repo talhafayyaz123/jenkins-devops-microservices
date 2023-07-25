@@ -46,17 +46,17 @@ pipeline {
 			steps {
 				sh "mvn package -DskipTests"
 			}
-		}
-		/* stage('Build Docker Image') {
-			steps {
 
+		}
+		stage('Build Docker Image') {
+			steps {
 				script {
 					dockerImage = docker.build("phpdockerpitb/hello-world-java:${env.BUILD_TAG}")
 				}
 
 			}
-		} */
-	/* 	stage('Push Docker Image') {
+		}
+		stage('Push Docker Image') {
 			steps {
 				script {
 					docker.withRegistry('', 'dockerhub') {
@@ -65,7 +65,7 @@ pipeline {
 					}
 				}
 			}
-		} */
+		}
 	}
 
 	post {
