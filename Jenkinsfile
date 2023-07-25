@@ -48,7 +48,7 @@
        stage('Build Docker Image'){
             steps{
               script{
-                dockerImage=docker.build("in28min/currency-exchange-devops:${env.BUILD_TAG}");
+                dockerImage=docker.build("in28min/currency-exchange-devops");
                 }
             }
         }
