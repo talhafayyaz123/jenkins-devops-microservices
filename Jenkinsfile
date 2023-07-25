@@ -48,7 +48,7 @@
        stage('Build Docker Image'){
             steps{
               script{
-                dockerImage=docker.build("docker build -t in28min/mmv3-currency-exchange-service:${env.BUILD_TAG}");
+                dockerImage=docker.build("in28min/mmv3-currency-exchange-service:${env.BUILD_TAG}");
                 }
             }
         }
