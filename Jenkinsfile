@@ -50,6 +50,7 @@ pipeline {
 					dockerImage = docker.build("phpdockerpitb/hello-world-java:${env.BUILD_TAG}")
 				}
 			}
+
 		}
 		stage('Push Docker Image') {
 			steps {
